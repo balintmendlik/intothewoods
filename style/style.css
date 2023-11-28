@@ -1,0 +1,306 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100%;
+  font-family: Montserrat, Helvetica, Verdana, sans-serif;
+}
+
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+
+#container{
+  position: relative;
+  margin: 5% auto;
+  width: 80%;
+  max-width: 1100px;
+  height: 80vh;
+  max-height: 700px;
+  background: radial-gradient(63.96% 207.23% at 34.97% 71.63%, #FFFFFF 0%, #E4FBFD 52.6%, #EEEAF2 100%);
+  box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.1);
+}
+
+#header{
+ position: relative;
+}
+
+#logo{
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 60px;
+  height: 110px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  display: flex;
+}
+
+#logo img{
+  width: 100%;
+  align-self: flex-end;
+}
+
+#breadcrumbs{
+  position: absolute;
+  top: 80px;
+  left: 250px;
+}
+
+#breadcrumbs a{
+  font-weight: 300;
+}
+
+#breadcrumbs a:hover{
+  text-decoration: underline;
+}
+
+#breadcrumbs a span{
+  font-weight: 700;
+}
+
+#hamburger-menu{
+  position: absolute;
+  top: 80px;
+  right: 80px;
+  z-index: 3;
+}
+
+/* Sliding Menu*/
+
+.slider-container{
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1100px;
+}
+
+.slider-parent {
+  height: 50vh;
+  max-width: 150px;
+  width: 100%;
+  background: #000;
+  position: absolute;
+  right: -150px;
+  top: 150px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: .2s all linear;
+  z-index: 2;
+  padding: 50px;
+}
+
+.slider-parent.active {
+  visibility: visible;
+  pointer-events: inherit;
+  transition: .2s all ease-in-out;
+  opacity: 1;
+  right: -40px;
+}
+
+.slider-parent a{
+  color: #FFF;
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+/* End of sliding menu*/
+
+
+.title{
+  font-size: 12vh;
+  font-weight: 900;
+  position: absolute;
+  top: 25vh;
+  left: -30%;
+  width: 90%;
+  opacity: 0;
+  padding-left: 5%;
+  z-index: 1;
+  pointer-events: none;
+ }
+
+.venue{
+  position: absolute;
+  top: 20vh;
+  opacity: 0;
+  left: 90%;
+}
+
+ .desc{
+   position: absolute;
+   left: 60%;
+   width: 30%;
+   line-height: 1.5;
+   opacity: 0;
+   bottom: -5vh;
+   pointer-events: none;
+ }
+
+ .featured-image{
+   position: absolute;
+   width: 30%;
+   left: 20%;
+   bottom: -10vh;
+   opacity: 0;
+ }
+
+ /* Animations */
+
+.slide-bottom{
+  visibility: visible;
+  pointer-events: inherit;
+  transition: 1s all ease-in-out;
+  transition-delay: .5s;
+  opacity: 1;
+  bottom: 5vh;
+  pointer-events: none;
+}
+
+.slide-bottom2{
+  visibility: visible;
+  pointer-events: inherit;
+  transition: .8s all ease-in-out;
+  transition-delay: .2s;
+  opacity: 1;
+  bottom: -5vh;
+}
+
+.slide-right{
+  visibility: visible;
+  pointer-events: inherit;
+  transition: 1.2s all ease-in-out;
+  left: 60%;
+  opacity: 1;
+}
+
+.slide-left{
+  visibility: visible;
+  pointer-events: inherit;
+  transition: 1s all ease-in-out;
+  left: -15%;
+  opacity: 1;
+}
+
+@media (min-height: 900px)
+{
+
+ .title{
+   top: 20vh;
+   font-size: 6rem;
+ }
+
+}
+
+ @media (max-width: 1024px)
+ {
+
+  .slider-parent{
+    top: 150px;
+  }
+
+  .slider-parent.active {
+    right: -20px;
+  }
+}
+
+ @media (max-width: 768px)
+ {
+
+  #logo{
+    left: 40px;
+    width: 45px;
+    height: 70px;
+    padding: 10px;
+  }
+
+  .xs{
+    display: none;
+  }
+
+  #hamburger-menu{
+    top: 40px;
+    right: 40px;
+  }
+
+  .title{
+    font-size: 4rem;
+    top: 20vh;
+    width: 50%;
+   }
+
+  .desc, .venue{
+    width: 40%;
+  }
+
+  .venue{
+    left: 90%;
+  }
+
+  .slide-right, .desc{
+    left: 50%;
+  }
+
+  .featured-image{
+    width: 40%;
+    left: 0;
+  }
+
+ }
+
+ @media (max-width: 600px)
+ {
+
+    #container{
+      width: 80%;
+      height: auto;
+    }
+
+    #logo{
+      left: 20px;
+    }
+
+    #hamburger-menu{
+      top: 20px;
+      right: 20px;
+    }
+
+    .slider-parent{
+      top: 50px;
+    }
+
+    .slider-parent a{
+      font-size: 1.2rem;
+      line-height: 4rem;
+    }
+
+   .title{
+     position: relative;
+     padding-top: 100px;
+     font-size: 3rem;
+     width: 100%;
+     top: 0;
+   }
+
+   .desc, .venue{
+     position: relative;
+     top: 0;
+     margin-top: 20px;
+     left: 20px;
+     width: 80%;
+   }
+
+   .featured-image{
+    position: relative;
+    width: 70%;
+  }
+
+  .slide-left{
+    left: -10%;
+  }
+ }
